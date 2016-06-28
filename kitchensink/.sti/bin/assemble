@@ -87,7 +87,7 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
     echo using proxy environment variables 
       C=$(echo $CONTENT | sed 's/\//\\\//g')
       #sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
-	  sed -i "s/<\/proxies>/$C<\/proxies>/"
+	  sed -i "s/<\/proxies>/$C<\/proxies>/" /home/jboss/.m2/settings.xml
 
 	  echo settings.xml................
 	  cat /home/jboss/.m2/settings.xml
