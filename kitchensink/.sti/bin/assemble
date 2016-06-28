@@ -87,6 +87,9 @@ if [ -f "$LOCAL_SOURCE_DIR/pom.xml" ]; then
    echo "No proxy setting configured. CUSTOM_PROXY_HOST and CUSTOM_PROXY_PORT are required as env variables. Maven will not be configured for a proxy. "  
    else
     echo using proxy environment variables 
+	  echo settings.xml................
+	  cat /home/jboss/.m2/settings.xml
+	  echo end of file.................
       C=$(echo $CONTENT | sed 's/\//\\\//g')
       sed -i -- "/<profiles>/ s/.*/${C}&/" /home/jboss/.m2/settings.xml
   fi
